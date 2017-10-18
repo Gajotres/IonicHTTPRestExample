@@ -1,14 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>List Page</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<ion-item>
+		<ion-label color="primary" stacked>Search movie database</ion-label>
+		<ion-input type="text" (input)="searchForMovie($event, searchKey)"></ion-input>
+	</ion-item>
+
+	<ion-list>	
+		<ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+			<ion-avatar item-left>
+				<img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
+			</ion-avatar>
+			<h2>{{movie.original_title}}</h2>
+			<p class="item-description">{{movie.overview}}</p>
+		</ion-item>
+	</ion-list>	
 </ion-content>

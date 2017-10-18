@@ -15,11 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InfoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	movie: {};	
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InfoPage');
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams) {
+		this.movie = navParams.get('movie');
+	}
 
 }
