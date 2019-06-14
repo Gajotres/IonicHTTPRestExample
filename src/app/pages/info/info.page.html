@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+		  	<ion-back-button></ion-back-button>
+		</ion-buttons>  	
+		<ion-title>Info Page</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card *ngIf="movie">
+		<img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}"/>
+		<ion-card-header>
+			<ion-card-subtitle>{{movie.release_date}}</ion-card-subtitle>
+			<ion-card-title>{{movie.title}}</ion-card-title>
+		</ion-card-header>
+
+		<ion-card-content>{{movie.overview}}</ion-card-content>
+	</ion-card>
+</ion-content>

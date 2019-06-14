@@ -1,6 +1,7 @@
 {
-  "name": "IonicHTTPRestExample2",
-  "app_id": "",
-  "type": "ionic-angular",
-  "integrations": {}
+  "name": "IonicHTTPRestExample",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
 }

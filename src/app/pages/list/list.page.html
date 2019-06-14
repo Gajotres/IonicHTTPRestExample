@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label color="primary" stacked>Search movie database</ion-label>
+        <ion-input type="text" (input)="searchForMovie($event, searchKey)"></ion-input>
+    </ion-item>
+ 
+    <ion-list>    
+        <ion-item *ngFor="let movie of movies" (click)="selectMovie($event, movie)">
+			<ion-thumbnail slot="start">
+				<img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}">
+			</ion-thumbnail>
+			<ion-label>
+				<h2>{{movie.original_title}}</h2>
+				<p>{{movie.overview}}</p>
+			</ion-label>
+        </ion-item>
+    </ion-list>   
+</ion-content>
